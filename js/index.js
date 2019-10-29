@@ -41,5 +41,34 @@ window.addEventListener('focus', () => {
     focus.style.backgroundColor = '#FFEBCD';
 })
 
+//resize 
+
+const resize = document.querySelector('.text-content p');
+window.addEventListener('resize', () => {
+    resize.style.fontWeight = 'bold';
+    resize.style.fontSize = '20px';
+})
 
 
+//scroll
+
+const scrollEvent = document.querySelector('body');
+window.addEventListener('scroll', () => {
+    scrollEvent.style.background = '#fc0';
+})
+
+//select
+
+// const selectEvent = document.querySelector('.logo-heading');
+// selectEvent.addEventListener('select', () => {
+//     document.querySelector('intro h2').innerHTML = 'Test!';
+// })
+
+//doubleclick
+
+const doubleClick1 = document.querySelectorAll('.destination h4');
+doubleClick1.forEach(e => {
+    e.addEventListener('dblclick', () => {
+        e.style.color = '#17A2B8';
+    })
+})
