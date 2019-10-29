@@ -64,11 +64,23 @@ window.addEventListener('scroll', () => {
 //     document.querySelector('intro h2').innerHTML = 'Test!';
 // })
 
-//doubleclick
+//doubleclick and stop propagation
 
 const doubleClick1 = document.querySelectorAll('.destination h4');
 doubleClick1.forEach(e => {
-    e.addEventListener('dblclick', () => {
+    e.addEventListener('dblclick', (event) => {
         e.style.color = '#17A2B8';
+        event.stopPropagation();
     })
+})
+
+//second doubleclick
+const doubleClick2 = document.querySelector('.content-pick');
+doubleClick2.addEventListener('dblclick', () => {
+    doubleClick2.style.backgroundColor = 'white';
+})
+
+const stopLinks = document.querySelector('.nav-link');
+stopLinks.addEventListener('click', (e) => {
+    e.preventDefault();
 })
