@@ -28,7 +28,36 @@ wheelEvent.addEventListener('wheel', () => {
 
 //Drag and Drop
 
-// const DrgDrop = document.querySelector()
+// const div1 = document.createElement('div');
+// div1.className = 'dropTarget';
+// div1.ondrop = 'drop(event)';
+// div1.ondragover = 'allowDrop(event)'
+// div1.style.border = '1px solid black';
+// div1.style.width = '100px'
+// div1.style.height = '100px';
+
+// const div2 = document.createElement('div');
+// div2.className = 'dropTarget';
+// div2.ondrop = 'drop(event)';
+// div2.ondragover = 'allowDrop(event)'
+// div2.style.border = '1px solid black';
+// div2.style.width = '100px'
+// div2.style.height = '100px';
+
+// const paraDrag = document.createElement('p');
+// paraDrag.ondragstart = 'dragStart(event)';
+// paraDrag.draggable = 'true'
+
+// const footerDrag = document.querySelector('footer');
+// footerDrag.append(div1, div2, paraDrag);
+
+const copyEvent = document.querySelector('body');
+copyEvent.addEventListener('copy', (event) => {
+    event.clipboardData.setData('text/plain', 'Quit Stealing');
+    event.preventDefault();
+})
+
+
 
 //load
 window.addEventListener('load', () => {
@@ -59,10 +88,22 @@ window.addEventListener('scroll', () => {
 
 //select
 
-// const selectEvent = document.querySelector('.logo-heading');
-// selectEvent.addEventListener('select', () => {
-//     document.querySelector('intro h2').innerHTML = 'Test!';
-// })
+const inputBox = document.createElement('input');
+const paragraph1 = document.createElement('p')
+const heading = document.querySelector('.logo-heading');
+
+inputBox.id = 'inputBoxSelect';
+inputBox.value = 'Hello World';
+paragraph1.id = 'paraSelect';
+
+heading.append(inputBox);
+heading.append(paragraph1);
+
+const selectEvent = document.querySelector('#inputBoxSelect');
+selectEvent.addEventListener('select', () => {
+    document.getElementById('paraSelect').innerHTML = 'You selected some text!';
+})
+
 
 //doubleclick and stop propagation
 
@@ -84,3 +125,4 @@ const stopLinks = document.querySelector('.nav-link');
 stopLinks.addEventListener('click', (e) => {
     e.preventDefault();
 })
+
